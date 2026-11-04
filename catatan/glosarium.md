@@ -2,7 +2,7 @@
 
 QA (Quality Assurance) proses untuk memastikan kualitas sebuah produk atau aplikasi sesuai standard yang bersifat mencegah (preventive)
 
-QC (Quality Control) adalah proses untuk memastikan kualitas sebuha produk atau aplikasi apakah sudah sesuai dengan standard yang bersifat mendeteksi
+QC (Quality Control) adalah proses untuk memastikan kualitas sebuah produk atau aplikasi apakah sudah sesuai dengan standard yang bersifat mendeteksi
 
 Bug/Defect adalah  fungsi aplikasi yang tidak sesuai dengan kebutuhan pengguna yang sudah ditentukan sebelumnya
 
