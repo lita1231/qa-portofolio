@@ -1,0 +1,28 @@
+# Test Case API: Users (jsonplaceholder.typicode.com)
+
+**Tools:** Postman
+**Base URL:** https://jsonplaceholder.typicode.com
+
+| Field | Isi |
+|---|---|
+| ID | TC-API-001 |
+| Title | Request data pengguna dengan ID yang tidak ada mengembalikan 404 |
+| Endpoint | GET https://jsonplaceholder.typicode.com/users/9999 |
+| Precondition | Postman terbuka, koneksi internet aktif |
+| Steps | 1. Buat request baru di Postman 2. Pilih method GET 3. Masukkan URL endpoint 4. Klik Send |
+| Test Data | ID pengguna: 9999 (tidak ada di server) |
+| Expected Result | server  membalas dengan status 404 Not Found dan body berisi "{}" |
+| Actual Result | Status 404 Not Found, body `{}` |
+| Status | Pass |
+
+## Test Script (Postman, tab Scripts, After response)
+
+```javascript
+pm.test("Status code adalah 404", function () {
+    pm.response.to.have.status(404);
+});
+```
+## Evidence
+
+![Hasil request GET users 9999](evidence/TC-API-001.png)
+
