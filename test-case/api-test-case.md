@@ -35,10 +35,9 @@ pm.test("Status code adalah 404", function () {
 | Endpoint | POST https://jsonplaceholder.typicode.com/posts |
 | Precondition | Postman terbuka, koneksi internet aktif |
 | Steps | 1. Buat request baru 2. Pilih method POST 3. Masukkan URL 4. Tab Body, pilih raw dan JSON, isi data 5. Klik Send |
-| Test Data | {
-  "title": "Percobaan QA",
-  "body": "Data fiktif untuk latihan",
-  "userId": 1
+| Test Data | { "title": "Percobaan QA",
+            "body": "Data fiktif untuk latihan", 
+            "userId": 1
 }|
 | Expected Result | server  membalas dengan status 201 Created dan menghasilkan id baru:101 |
 | Actual Result | Status 201 Created, body memuat data yang dikirim plus id: 101 |
