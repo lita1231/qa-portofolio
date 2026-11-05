@@ -1,5 +1,6 @@
 # Glosarium QA 
-Hari 1
+FASE 1: 
+BAGIAN A:Fundamental Quality Assurance
 
 QA (Quality Assurance) proses untuk memastikan kualitas sebuah produk atau aplikasi sesuai standard yang bersifat mencegah (preventive)
 
@@ -8,6 +9,8 @@ QC (Quality Control) adalah proses untuk memastikan kualitas sebuah produk atau 
 Bug/Defect adalah  fungsi aplikasi yang tidak sesuai dengan kebutuhan pengguna yang sudah ditentukan sebelumnya
 
 Requirement adalah kebutuhan yang disepakati tentang apa yang wajib dibuat pada aplikasi
+
+BAGIAN B: SDLC dan STLC
 
 SDLC (Software Development Life Cycle) adalah proses pembuatan aplikasi. 
 Tahapan SDLC:
@@ -27,15 +30,18 @@ Tahapan STLC:
 - Test Execution (menjalankan tes case, mencatata hasil dan melaporkan bug)
 - Test Closure (menutup pengujian dan merangkum hasil pengujian)
 
+BAGIAN C: Agile, Scrum, dan Peran QA di Tim
+
 Shift-left adalah melakukan pengujian pada tahap awal agar meminimalisir biaya perbaikan
 
-Sprint adala siklus kerja pendek  di Scrum biasanya dalam 1-4 minggu
+Sprint adalah siklus kerja pendek  di Scrum biasanya dalam 1-4 minggu
 
 User Story adalah kebutuhan dari sudut pandang pengguna dalam bentuk kalimat
 
 Acceptance Criteria adalah syarat terukur agar sebuah user story dianggap selesai
 
-Hari 2
+FASE 2:
+BAGIAN A: Functional vs Non-Functional, Black Box vs White Box
 
 Functional Testing adalah menguji fitur suatu aplikasi apakah bekerja sesuai fungsi
 
@@ -44,6 +50,9 @@ Non-functional Testing adalah menguji seberapa baik suatu aplikasi bekerja (kece
 Black-box Testing adalah menguji aplikasi tanpa melihat kode seperti menguji fitur suatu aplikasi
 
 White-box Testing adalah menguji aplikasi dengan melihat struktur kode yang biasanya dilakukan oleh developer
+
+
+BAGIAN B: Positive, Negative, Smoke, Sanity, Regression, Retesting
 
 Positive Testing adalah pengujian dengan input data yang valid
 
@@ -56,6 +65,8 @@ Sanity Testing adalah pengecekan cepat bagian yang diperbaiki
 Retesting adalah menguji ulang bug yang sama setelah diperbaiki
 
 Regression Testing adalah memastikan fitur lama tidak rusak ketika adanya perubahan atau penambahan fitur baru
+
+BAGIAN C: Integration, System, UAT, Severity vs Priority
 
 Integration Testing adalah menguji gabungan beberapa aplikasi 
 
