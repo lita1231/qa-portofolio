@@ -80,5 +80,62 @@ Priority adalah urutan kecepatan perbaikan bug
 
 Exploratory Testing adalah menjelajah aplikasi dengan rasa ingin tahu untuk mencari perilaku tak terduga
 
+## Fase 3: Test Documentation
+
+**Test Plan** adalah dokumen perencanaan pengujian: apa yang diuji, siapa, kapan, dan dengan tools apa.
+
+**Test Scenario** adalah gambaran singkat satu kalimat tentang apa yang diuji. 
+Contoh: "Pengguna bisa checkout dengan data valid."
+
+**Test Case** adalah langkah detail beserta hasil yang diharapkan untuk satu tujuan pengujian. 
+
+Komponen test case:
+- **ID**: nomor unik, contoh TC-CHECKOUT-001.
+- **Title**: judul singkat yang sesuai isi.
+- **Precondition**: kondisi yang harus terpenuhi sebelum mulai.
+- **Steps**: langkah berurutan yang bisa diikuti orang lain.
+- **Test Data**: data yang dipakai (gunakan data fiktif).
+- **Expected Result**: hasil yang seharusnya, spesifik dan bisa dijawab lulus atau gagal.
+- **Actual Result**: hasil sebenarnya saat dijalankan.
+- **Status**: Pass, Fail, Blocked, atau Not Executed.
+
+**Ciri test case yang baik:** satu tujuan per test case, langkah jelas, expected result spesifik, data tertulis eksplisit.
+
+**Pass vs Fail:** Pass jika actual sama dengan expected. Fail jika berbeda. Aplikasi yang menolak input salah dengan benar berarti Pass, bukan Fail. 
+
+**Blocked** adalah test case yang tidak bisa dijalankan karena ada hambatan, misalnya situs sedang down. Berbeda dengan Fail, yang sudah dijalankan tetapi hasilnya salah. 
+
+**Equivalence Partitioning (EP)** membagi input menjadi kelompok yang berperilaku sama, lalu menguji satu wakil dari tiap kelompok. 
+Contoh: jumlah barang 1-10, kelompok: kurang dari 1 (wakil 0), 1-10 (wakil 8), lebih dari 10 (wakil 15).
+
+**Boundary Value Analysis (BVA)** menguji nilai tepat di batas dan di sekitarnya, karena bug sering muncul di sana (misalnya `<` tertukar dengan `<=`). 
+Contoh batas 1-10: uji 0, 1, 2, 9, 10, 11.
+
+**Decision Table** adalah tabel kombinasi beberapa kondisi beserta hasilnya, dipakai saat hasil bergantung pada kombinasi kondisi. 
+Temuan saya: pada checkout saucedemo, jika First Name dan Last Name sama-sama kosong, hanya pesan "First Name is required" yang muncul.
+
+**Test Data** adalah data masukan pengujian: valid, invalid, kosong, batas, dan karakter khusus.
+
+**Test Execution** adalah menjalankan test case persis sesuai langkah dan mencatat hasil sebenarnya.
+
+**Test Summary Report** adalah laporan ringkas hasil pengujian: ruang lingkup, lingkungan, jumlah Pass/Fail/Blocked, pass rate, daftar bug, dan kesimpulan layak rilis atau tidak.
+
+**Pass rate** = jumlah Pass dibagi total test case. Contoh: 6 dari 8 = 75%.
+
+**Evidence** adalah bukti pengujian (screenshot atau rekaman), wajib untuk hasil Fail.
+
+## Tambahan: Bug Report dan API
+
+**Bug Lifecycle:** New -> Open -> In Progress -> Fixed -> Retest -> Closed (atau Reopened jika masih bermasalah).
+
+**Reproducible** artinya bug bisa diulang dengan langkah yang sama. Bug yang tidak bisa direproduksi belum layak dilaporkan.
+
+**API** adalah penghubung antar aplikasi. 
+
+**HTTP Method:** GET (ambil data), POST (buat data), PUT/PATCH (ubah data), DELETE (hapus data).
+
+**Status Code:** 2xx sukses (200, 201), 4xx salah di sisi klien (400, 401, 404), 5xx salah di sisi server (500).
+
+**Assertion** adalah baris pemeriksa yang membandingkan actual dengan expected, contoh `pm.response.to.have.status(404)`.
 
 
