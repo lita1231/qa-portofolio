@@ -24,7 +24,7 @@ Google Chrome (DevTools), Postman, Git dan GitHub, Visual Studio Code.
 
 ## Sedang Dipelajari
 
-SQL dasar, API testing lanjutan, automation testing
+SQL dasar untuk pengujian database, API testing lanjutan dengan Postman, dan automation testing.
 
 ## Tentang Saya
 

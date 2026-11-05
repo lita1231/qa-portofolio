@@ -139,3 +139,27 @@ Temuan saya: pada checkout saucedemo, jika First Name dan Last Name sama-sama ko
 **Assertion** adalah baris pemeriksa yang membandingkan actual dengan expected, contoh `pm.response.to.have.status(404)`.
 
 
+## Fase 7: Database Testing (SQL), Bagian A
+
+**Database Testing** adalah memeriksa apakah data di database sama dengan yang ditampilkan atau dikirim aplikasi. 
+
+**SELECT** membaca data dari tabel. Contoh: `SELECT * FROM users;`
+
+**WHERE** menyaring baris sesuai syarat. Contoh: `WHERE id = 1`.
+
+**INSERT** menambah baris baru. **UPDATE** mengubah data. **DELETE** menghapus data. 
+
+**Peringatan:** UPDATE dan DELETE tanpa WHERE mengenai seluruh baris. Selalu pakai WHERE dan jalankan hanya di database pengujian.
+
+**JOIN** menggabungkan dua tabel lewat kolom yang berhubungan, misalnya `orders.user_id = users.id`. 
+
+**NULL** artinya nilai kosong (belum ada isinya), berbeda dengan angka 0 atau teks kosong. Mencarinya memakai `IS NULL`, bukan `= NULL`.
+
+**NULL** artinya "tidak ada nilai". Mencarinya memakai `IS NULL`, bukan `= NULL`, karena `=` hanya bisa membandingkan dua nilai. 
+
+**Query yang salah tidak selalu error.** `WHERE email = NULL` berjalan tanpa pesan error, tapi hasilnya kosong dan menyesatkan. Hasil query harus selalu diperiksa, tidak hanya pesan errornya.
+
+**Error #1054 Unknown column** artinya nama kolom yang ditulis tidak ada di tabel. Penyebab umum: salah ketik atau menyalin tempat kosong dari contoh. Perbaikannya: periksa nama kolom di struktur tabel.
+
+**Mengapa QA memeriksa database:** tampilan bisa terlihat benar padahal data tersimpan salah atau tidak valid. 
+Contoh: kode pos `abc!@#` diterima saat checkout, sehingga data pengiriman yang tersimpan bisa tidak valid.
