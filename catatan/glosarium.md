@@ -163,3 +163,23 @@ Temuan saya: pada checkout saucedemo, jika First Name dan Last Name sama-sama ko
 
 **Mengapa QA memeriksa database:** tampilan bisa terlihat benar padahal data tersimpan salah atau tidak valid. 
 Contoh: kode pos `abc!@#` diterima saat checkout, sehingga data pengiriman yang tersimpan bisa tidak valid.
+
+## Fase 7: Database Testing (SQL), Bagian B
+
+**AUTO_INCREMENT** membuat database mengisi id secara otomatis dan unik, sehingga id tidak perlu ditulis saat INSERT. 
+
+**Kebiasaan QA setelah INSERT:** selalu buktikan dengan SELECT bahwa data benar-benar masuk.
+
+**UPDATE** mengubah data yang sudah ada. Selalu pakai WHERE, lebih baik dengan id yang unik. Setelah UPDATE, periksa bahwa baris yang dituju berubah **dan baris lain tidak ikut berubah**. 
+
+**DELETE** menghapus data dan tidak bisa dibatalkan. Kebiasaan aman: SELECT dulu dengan syarat yang sama, lalu DELETE, lalu SELECT lagi. 
+
+**Primary Key** adalah kolom yang nilainya unik untuk setiap baris, contohnya `id`.
+
+**Foreign Key** adalah kolom yang menunjuk ke primary key tabel lain. Contoh: `orders.user_id` menunjuk ke `users.id`.
+
+**JOIN** menggabungkan data dari beberapa tabel lewat kolom yang berhubungan. Data hanya dibaca, tidak diubah. 
+
+**INNER JOIN** hanya menampilkan baris yang punya pasangan di kedua tabel. Pengguna tanpa pesanan tidak akan muncul.
+
+**Data tidak konsisten** terjadi saat data di satu tabel menunjuk ke data yang tidak ada, misalnya pesanan dengan `user_id` milik pengguna yang sudah dihapus. JOIN membantu menemukannya. 
